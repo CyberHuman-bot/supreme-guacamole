@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+    <style>
+        body{
+            background-color: green;
+
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+            text-transform: capitalize;
+        }
+        .carousel-container {
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            width: 25%;
+
+        }
+        .myslides{
+            display: none;
+            max-width: 100%;
+            max-height: 100%;
+        }
+        .nav {
+            background-color: #333;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+            width: 15%;
+        }
+        .item{
+            text-transform: uppercase;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <nav>
+            <ul>
+                <li><a class="item" href="#news">news</a></li>
+                <li><a class="item" href="#login">login</a></li>
+                <li><a class="item" href="#signup">signup</a></li>
+                <li><a class="item" href="#dance">dance party</a></li>
+            </ul>
+        </nav>
+    </div>
+    <h1>Image Carousel</h1>
+    <div class="carousel-container">
+        <img class="myslides" src="https://m.media-amazon.com/images/I/51DBd7O6GEL._SL1500_.jpg" alt="Image 1">
+        <img class="myslides" src="https://snworksceo.imgix.net/cds/58b1e522-dc3c-45ca-874d-e127b6fa8470.sized-1000x1000.jpg?w=1000&dpr=2" alt="Image 2">
+        <img class="myslides" src="https://www.telefonica.com/en/wp-content/uploads/sites/5/2023/07/differences-robotis-ia.jpg" alt="Image 3">
+                <img class="myslides" src="https://m.media-amazon.com/images/I/51DBd7O6GEL._SL1500_.jpg" alt="Image 4">
+        <img class="myslides" src="https://snworksceo.imgix.net/cds/58b1e522-dc3c-45ca-874d-e127b6fa8470.sized-1000x1000.jpg?w=1000&dpr=2" alt="Image 2">
+        <img class="myslides" src="https://www.telefonica.com/en/wp-content/uploads/sites/5/2023/07/differences-robotis-ia.jpg" alt="Image 3">
+    </div>
+
+    <script>
+        var index = 0;
+        function carousel(){
+            var i;
+            var x = document.getElementsByClassName("myslides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+            }
+            index++;
+            if (index > x.length) {
+                index = 1;
+            }
+            x[index - 1].style.display = "block";  
+            setTimeout(carousel, 4000);
+        }
+        carousel();
+    </script>
+</body>
+</html>
